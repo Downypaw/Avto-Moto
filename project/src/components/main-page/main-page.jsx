@@ -7,10 +7,12 @@ import Popup from '../popup/popup';
 
 export default function MainPage() {
   return (
-    <Header />
-    <GoodPresentation />
-    <TabsSection />
-    <Footer />
-    <Popup />
+    <>
+      <Header />
+      <GoodPresentation />
+      <TabsSection />
+      <Footer />
+      <Popup />
+    </>
   );
 }
