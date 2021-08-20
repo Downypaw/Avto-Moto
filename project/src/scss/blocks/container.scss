@@ -1,4 +1,12 @@
 .container {
-  width: 1182px;
+  width: 635px;
   margin: 0 auto;
+
+  @media screen and (min-width: $min-width) {
+    width: 62%;
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    width: 1182px;
+  }
 }
