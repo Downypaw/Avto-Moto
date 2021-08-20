@@ -1,0 +1,24 @@
+.navigation__list {
+  @include list;
+  display: flex;
+}
+
+.navigation__link {
+  text-decoration: none;
+  color: $main-text-color;
+  margin-left: 57px;
+  display: inline-block;
+  padding: 32px 6px;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  &:hover {
+    color: $highlighted-text-color;
+  }
+
+  &:active,
+  &:focus {
+    opacity: 0.7;
+  }
+}

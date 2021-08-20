@@ -1,0 +1,15 @@
+.page-header {
+  background-color: $block-color;
+  min-height: 84px;
+  box-sizing: border-box;
+}
+
+.page-header__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-header__left {
+  margin-left: 7px;
+  margin-top: 15px;
+}
