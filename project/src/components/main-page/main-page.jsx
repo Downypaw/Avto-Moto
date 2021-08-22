@@ -10,6 +10,7 @@ export default function MainPage() {
     <>
       <Header />
       <div className="page-main">
+        <h1 className="visually-hidden">Сайт компании "Авто-мото"</h1>
         <GoodPresentation />
         <TabsSection />
       </div>
