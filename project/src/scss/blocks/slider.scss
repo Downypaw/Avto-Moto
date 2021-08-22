@@ -1,8 +1,13 @@
+.slider {
+  margin-top: 5px;
+}
+
 .slider__container {
   width: 600px;
   height: 375px;
   overflow: hidden;
   margin-bottom: 38px;
+  position: relative;
 }
 
 .slider__image {
@@ -104,4 +109,21 @@
 
 .slider__control:last-of-type {
   order: 2
+}
+
+.slider__new-model {
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  min-width: 122px;
+  min-height: 30px;
+  background-color: $button-color;
+  top: 0;
+  z-index: 1;
+  color: $main-color;
+  box-sizing: border-box;
+  padding: 5px 0;
+  letter-spacing: 0.07em;
 }

@@ -1,0 +1,98 @@
+.good-information {
+  margin-left: 54px;
+}
+
+.good-information__name {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.good-information__price {
+  margin-top: 53px;
+  margin-bottom: 43px;
+}
+
+.good-information__new-price {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+  margin-right: 35px;
+  margin-left: 3px;
+  display: inline-block;
+  font-family: "Open Sans", "Arial", sans-serif;
+}
+
+.good-information__old-price {
+  margin: 0;
+  opacity: 0.5;
+  font-size: 20px;
+  vertical-align: top;
+  display: inline-block;
+  font-family: "Open Sans", "Arial", sans-serif;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 122px;
+    height: 1px;
+    background-color: $main-text-color;
+    opacity: 0.5;
+    transform: rotate(-5deg);
+    top: 10px;
+  }
+}
+
+.good-information__request {
+  cursor: pointer;
+  border: none;
+  background-color: $button-color;
+  min-width: 196px;
+  min-height: 52px;
+  color: $main-color;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  display: block;
+  margin-bottom: 15px;
+
+  &:hover {
+    background-color: darken($button-color, 3%);
+  }
+
+  &:active,
+  &:focus {
+    background-color: darken($button-color, 8%);
+  }
+}
+
+.good-information__credit {
+    cursor: pointer;
+  border: 1px solid $button-color;
+  color: $button-color;
+  min-width: 222px;
+  min-height: 52px;
+  background-color: $main-color;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  &:hover {
+    color: darken($button-color, 10%);
+    border-color: darken($button-color, 10%);
+  }
+
+  &:active,
+  &:focus {
+    color: darken($button-color, 20%);
+    border-color: darken($button-color, 20%);
+  }
+}
