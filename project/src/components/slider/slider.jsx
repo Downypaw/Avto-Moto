@@ -41,6 +41,7 @@ export default function Slider() {
   return (
     <div className="slider">
       <div className="slider__container">
+        <span className="slider__new-model">New model</span>
         <ul className="slider__items" style={{left: `${offset}px`}}>
           {images.map((image, index) => (
             <li className="slider__item" key={image.fullImage}>
