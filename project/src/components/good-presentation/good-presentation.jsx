@@ -3,6 +3,10 @@ import Slider from '../slider/slider';
 
 export default function GoodPresentation() {
   return (
-    <Slider />
+    <div className="presentation">
+      <div className="presentation__container container">
+        <Slider />
+      </div>
+    </div>
   );
 }

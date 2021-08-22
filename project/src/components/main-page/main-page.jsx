@@ -9,8 +9,10 @@ export default function MainPage() {
   return (
     <>
       <Header />
-      <GoodPresentation />
-      <TabsSection />
+      <div className="page-main">
+        <GoodPresentation />
+        <TabsSection />
+      </div>
       <Footer />
       <Popup />
     </>
