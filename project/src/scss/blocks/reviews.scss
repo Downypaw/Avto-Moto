@@ -1,0 +1,109 @@
+.reviews {
+  position: relative;
+}
+
+.reviews__review {
+  padding-top: 19px;
+  border-bottom: 0.5px solid lighten($highlighted-text-color, 80%);
+  padding-bottom: 19px;
+}
+
+.reviews__button {
+  @include light-button;
+  position: absolute;
+  top: 20px;
+  right: 14px;
+  min-width: 189px;
+  min-height: 52px;
+  padding: 15px 0;
+}
+
+.reviews__list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.reviews__author {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+}
+
+.reviews__properties {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.reviews__property,
+.reviews__comment-title {
+  color: $highlighted-text-color;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.reviews__property--advantages::before {
+  position: absolute;
+  content: "+";
+  width: 9px;
+  height: 21px;
+  color: $button-color;
+  left: 0;
+}
+
+.reviews__property--disadvantages::before {
+  position: absolute;
+  content: "–";
+  width: 9px;
+  height: 21px;
+  color: $button-color;
+  left: 0;
+}
+
+.reviews__value {
+  margin: 0;
+  margin-top: 3px;
+  margin-bottom: 15px;
+  line-height: 20.43px;
+}
+
+.reviews__comment {
+  margin-top: 3px;
+  margin-bottom: 20px;
+  line-height: 20.43px;
+}
+
+.reviews__stars {
+  width: 103px;
+  height: 17px;
+}
+
+.reviews__stars::before {
+  width: 103px;
+  background-size: 103px 17px;
+}
+
+.reviews__time {
+  font-size: 14px;
+  margin-right: 21px;
+}
+
+.reviews__answer-button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  color: $button-color;
+  font-family: "Open Sans", "Arial", sans-serif;
+
+  &:hover {
+    color: darken($button-color, 20%);
+  }
+
+  &:active,
+  &:focus {
+    color: $button-color;
+    opacity: 0.5;
+  }
+}

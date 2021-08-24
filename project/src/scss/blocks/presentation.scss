@@ -1,8 +1,9 @@
 .presentation {
-  padding-bottom: 85px;
+  padding-bottom: 87px;
   padding-top: 85px;
 }
 
 .presentation__container {
   display: flex;
+  flex-wrap: wrap;
 }

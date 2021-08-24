@@ -1,0 +1,28 @@
+.features-table {
+  min-width: 565px;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.features-table__row {
+  border-bottom: 1px solid $faded-color;
+  padding-bottom: 10px;
+}
+
+.features-table__title,
+.features-table__value {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: normal;
+  padding-bottom: 8px;
+  padding-top: 19px;
+}
+
+.features-table__value {
+  color: $highlighted-text-color;
+  text-align: right;
+}
+
+.features-table__title {
+  text-align: left;
+}

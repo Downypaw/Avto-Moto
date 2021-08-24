@@ -1,0 +1,49 @@
+.tabs {
+  margin-bottom: 139px;
+}
+
+.tabs__container {
+  padding-left: 10px;
+}
+
+.tabs__button {
+  min-width: 195px;
+  min-height: 50px;
+  border: 1px solid $faded-color;
+  background-color: transparent;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Open Sans", "Arial", sans-serif;
+  box-sizing: border-box;
+
+  &:hover {
+    color: darken($button-color, 10%);
+    border-color: darken($button-color, 10%);
+    background-color: darken($main-color, 2%);
+  }
+
+  &:active,
+  &:focus {
+    color: darken($button-color, 20%);
+    border-color: darken($button-color, 20%);
+    background-color: darken($main-color, 5%);
+  }
+}
+
+.tabs__button--active {
+  color: $main-color;
+  background-color: $button-color;
+  border: none;
+
+  &:hover {
+    color: $main-color;
+    background-color: darken($button-color, 3%);
+  }
+
+  &:active,
+  &:focus {
+    color: $main-color;
+    background-color: darken($button-color, 8%);
+    border-color: darken($button-color, 20%);
+  }
+}

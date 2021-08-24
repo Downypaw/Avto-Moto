@@ -1,9 +1,9 @@
 .container {
-  width: 635px;
+  width: 1000px;
   margin: 0 auto;
 
   @media screen and (min-width: $min-width) {
-    width: 62%;
+    width: 97%;
   }
 
   @media screen and (min-width: $desktop-width) {

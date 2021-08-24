@@ -1,0 +1,41 @@
+.rating {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.rating__stars {
+  position: relative;
+  display: block;
+  font-size: 0;
+  margin-right: 21px;
+}
+
+.rating__stars::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  background: url("../../img/stars.svg") transparent no-repeat center;
+  z-index: 1;
+}
+
+.rating__active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.rating__active::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  background: url("../../img/stars-active.svg") transparent no-repeat center;
+  width: 103px;
+  background-size: 103px 17px;
+}
+
+.rating__text {
+  color: $button-color;
+}
