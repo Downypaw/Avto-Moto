@@ -21,3 +21,53 @@
     opacity: 0.7;
   }
 }
+
+@mixin light-button {
+  cursor: pointer;
+  border: 1px solid $button-color;
+  color: $button-color;
+  background-color: $main-color;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Open Sans", "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  box-sizing: border-box;
+
+  &:hover {
+    color: darken($button-color, 10%);
+    border-color: darken($button-color, 10%);
+    background-color: darken($main-color, 2%);
+  }
+
+  &:active,
+  &:focus {
+    color: darken($button-color, 20%);
+    border-color: darken($button-color, 20%);
+    background-color: darken($main-color, 5%);
+  }
+}
+
+@mixin bright-button {
+  cursor: pointer;
+  border: none;
+  background-color: $button-color;
+  color: $main-color;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: darken($button-color, 3%);
+  }
+
+  &:active,
+  &:focus {
+    background-color: darken($button-color, 8%);
+  }
+}

@@ -19,7 +19,7 @@ export default function GoodInformation() {
         <pre className="good-information__old-price">2  400 000 ₽</pre>
       </div>
       <button className="good-information__request">Оставить заявку</button>
-      <button className="good-information__credit">В кредит от 11 000 ₽</button>
+      <button className="good-information__credit">В кредит от <span>11 000 ₽</span></button>
     </div>
   );
 }

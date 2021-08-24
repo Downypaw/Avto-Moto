@@ -1,12 +1,6 @@
 import React from 'react';
 import {useState} from 'react';
-
-const IMAGE_WIDTH = 600;
-
-const ControlType = {
-  PREV: 'prev',
-  NEXT: 'next'
-};
+import {IMAGE_WIDTH, ControlType} from '../../const.js';
 
 const images = [
   {

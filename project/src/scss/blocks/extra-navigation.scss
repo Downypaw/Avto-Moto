@@ -2,11 +2,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 67px;
+  gap: 65px;
   @include list;
 }
 
 .extra-navigation__link {
   @include navigation-link;
-  padding: 31px 0;
+  padding: 31px 1px;
 }
