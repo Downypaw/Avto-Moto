@@ -28,6 +28,9 @@
 
 .slider__previews {
   @include list;
+  display: flex;
+  flex-wrap: wrap;
+  width: 470px;
 }
 
 .slider__control {

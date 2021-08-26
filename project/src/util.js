@@ -1,8 +1,12 @@
 import dayjs from 'dayjs'
 import 'dayjs/locale/ru';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
+
+dayjs.locale('ru');
 
 export const formatCommentDate = (date) => {
-  return dayjs().locale('ru').fromNow();
+  return dayjs(date).fromNow();
 };
 
 const generateCommentId = () => {
