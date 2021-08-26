@@ -12,9 +12,9 @@ export default function Footer() {
             </Link>
           </li>
           <li className="extra-navigation__item">
-            <a className="extra-navigation__link" href="#">
+            <Link className="extra-navigation__link" to="/blank">
               Клиентам
-            </a>
+            </Link>
           </li>
           <li className="extra-navigation__item">
             <Link className="extra-navigation__link" to="/blank">
