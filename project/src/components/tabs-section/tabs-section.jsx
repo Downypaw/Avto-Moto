@@ -11,12 +11,12 @@ export default function TabsSection({onKeyDown}) {
 
   const setCurrentTab = (tab) => {
     switch(tab) {
-      case Tab.FEATURES:
-        return <FeaturesTab />;
       case Tab.REVIEWS:
         return <ReviewsTab onEscKeyDown={onKeyDown}/>;
       case Tab.CONTACTS:
         return <ContactTab />;
+      default:
+        return <FeaturesTab />;
     }
   };
 

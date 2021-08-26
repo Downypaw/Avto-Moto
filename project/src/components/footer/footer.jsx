@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -6,9 +7,9 @@ export default function Footer() {
       <div className="container">
         <ul className="extra-navigation">
           <li className="extra-navigation__item">
-            <a className="extra-navigation__link" href="#">
+            <Link className="extra-navigation__link" to="/blank">
               Корпоративным клиентам
-            </a>
+            </Link>
           </li>
           <li className="extra-navigation__item">
             <a className="extra-navigation__link" href="#">
@@ -16,29 +17,29 @@ export default function Footer() {
             </a>
           </li>
           <li className="extra-navigation__item">
-            <a className="extra-navigation__link" href="#">
+            <Link className="extra-navigation__link" to="/blank">
               Аренда авто
-            </a>
+            </Link>
           </li>
           <li className="extra-navigation__item">
-            <a className="extra-navigation__link" href="#">
+            <Link className="extra-navigation__link" to="/blank">
               Каршеринг
-            </a>
+            </Link>
           </li>
           <li className="extra-navigation__item">
-            <a className="extra-navigation__link" href="#">
+            <Link className="extra-navigation__link" to="/blank">
               Как продать авто
-            </a>
+            </Link>
           </li>
           <li className="extra-navigation__item">
-            <a className="extra-navigation__link" href="#">
+            <Link className="extra-navigation__link" to="/blank">
               Trade-in
-            </a>
+            </Link>
           </li>
           <li className="extra-navigation__item">
-            <a className="extra-navigation__link" href="#">
+            <Link className="extra-navigation__link" to="/blank">
               Test drive
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
