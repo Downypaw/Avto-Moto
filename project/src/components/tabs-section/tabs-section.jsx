@@ -4,8 +4,9 @@ import FeaturesTab from '../features-tab/features-tab';
 import ReviewsTab from '../reviews-tab/reviews-tab';
 import ContactTab from '../contact-tab/contact-tab';
 import {Tab} from '../../const.js';
+import PropTypes from 'prop-types';
 
-export default function TabsSection() {
+export default function TabsSection({onKeyDown}) {
   const [tab, setTab] = useState(Tab.FEATURES);
 
   const setCurrentTab = (tab) => {
@@ -13,7 +14,7 @@ export default function TabsSection() {
       case Tab.FEATURES:
         return <FeaturesTab />;
       case Tab.REVIEWS:
-        return <ReviewsTab />;
+        return <ReviewsTab onEscKeyDown={onKeyDown}/>;
       case Tab.CONTACTS:
         return <ContactTab />;
     }
@@ -46,4 +47,8 @@ export default function TabsSection() {
       </div>
     </div>
   );
+}
+
+TabsSection.propTypes = {
+  onKeyDown: PropTypes.func.isRequired,
 }

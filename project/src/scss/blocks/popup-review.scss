@@ -1,0 +1,198 @@
+.popup-review {
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  box-sizing: border-box;
+  background-color: rgba($shadow-color, .3);
+}
+
+.popup-review__modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 698px;
+  box-sizing: border-box;
+  background-color: $block-color;
+  min-height: 415px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.popup-review__title {
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.popup-review__form {
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 22px;
+}
+
+.popup-review__form-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 28px;
+  grid-row-gap: 14px;
+}
+
+.popup-review__close {
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  width: 25px;
+  height: 25px;
+  top: 10px;
+  right: 20px;
+
+  &:hover::before,
+  &:hover::after {
+    background-color: $button-color;
+  }
+
+  &:active::before,
+  &:active::after,
+  &:focus::before,
+  &:focus::after {
+    background-color: $close-button-color;
+    opacity: 0.5;
+  }
+}
+
+.popup-review__close::before,
+.popup-review__close::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: $close-button-color;
+}
+
+.popup-review__close::before {
+  transform: rotate(45deg);
+}
+
+.popup-review__close::after {
+  transform: rotate(-45deg);
+}
+
+.popup-review__input {
+  width: 300px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 1px solid rgba($main-text-color, .2);
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 14px;
+
+  &:hover {
+    border: 1px solid rgba($main-text-color, .5);
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid $button-color;
+  }
+}
+
+.popup-review__input[name="advantages-field"] {
+  grid-row-start: 2;
+}
+
+.popup-review__input[name="disadvantages-field"] {
+  grid-row-start: 3;
+}
+
+.popup-review__required {
+  position: relative;
+
+  &::before {
+    content: "*";
+    position: absolute;
+    color: $button-color;
+    font-size: 12px;
+    width: 6px;
+    height: 21px;
+    top: 6px;
+    left: 11px;
+  }
+}
+
+.popup-review__required--comment {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.popup-review__comment-field {
+  min-width: 300px;
+  height: 118px;
+  border: 1px solid rgba($main-text-color, .2);
+  padding: 12px 23px;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: "Open Sans", "Arial", sans-serif;
+
+  &:hover {
+    border: 1px solid rgba($main-text-color, .5);
+  }
+
+  &:active,
+  &:focus {
+    border: 1px solid $button-color;
+  }
+}
+
+.popup-review__rating {
+  padding-top: 3px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.popup-review__rating-title {
+  font-weight: 600;
+  margin-right: 12px;
+  align-self: baseline;
+  margin-top: 7px;
+  order: 2;
+}
+
+.popup-review__rating-label:not(:first-of-type) {
+  margin-right: 8px;
+}
+
+.popup-review__rating-label {
+  height: 20px;
+}
+
+.popup-review__button {
+  min-width: 190px;
+  min-height: 52px;
+  @include bright-button;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-top: 30px;
+}
+
+.popup-review__radio-button ~ .popup-review__rating-label .popup-review__star-image {
+  fill: rgba(189, 190, 194, .7);
+}
+
+.popup-review__radio-button:checked ~ .popup-review__rating-label .popup-review__star-image, .popup-review__rating-input:focus ~ .popup-review__rating-label .popup-review__star-image, .popup-review__rating-label:hover .popup-review__star-image, .popup-review__rating-label:hover ~ .popup-review__rating-label .popup-review__star-image {
+  fill: $button-color;
+}
+
+.popup-review__warning {
+  position: absolute;
+  top: -25px;
+  color: $button-color;
+  font-size: 14px;
+}
