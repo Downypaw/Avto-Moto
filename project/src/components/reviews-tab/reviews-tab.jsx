@@ -1,10 +1,10 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
 import {getComments} from '../../store/selectors';
 import {setPopupStatus} from '../../store/action';
 import Review from '../review/review';
 import PropTypes from 'prop-types';
-import {onEscKeyDown} from '../../util';
 
 export default function ReviewsTab({onEscKeyDown}) {
   const comments = useSelector(getComments);
@@ -12,15 +12,16 @@ export default function ReviewsTab({onEscKeyDown}) {
 
   return (
     <div className="reviews">
-      <a
+      <Link
         className="reviews__button"
         onClick={() => {
           dispatch(setPopupStatus(true));
           document.addEventListener('keydown', onEscKeyDown);
         }}
+        to="/blank"
       >
         Оставить отзыв
-      </a>
+      </Link>
       <ul className="reviews__list">
         {comments.map((comment) => <Review key={comment.id} review={comment}/>)}
       </ul>

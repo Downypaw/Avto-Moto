@@ -21,15 +21,7 @@ export default function Slider() {
   const [offset, setOffset] = useState(0);
 
   const onControlClick = (controlType) => {
-    switch(controlType) {
-      case ControlType.PREV:
-        setOffset(offset + IMAGE_WIDTH);
-        break;
-      case ControlType.NEXT:
-        setOffset(offset - IMAGE_WIDTH);
-        break;
-
-    }
+    controlType === ControlType.PREV ? setOffset(offset + IMAGE_WIDTH) : setOffset(offset - IMAGE_WIDTH);
   };
 
   return (

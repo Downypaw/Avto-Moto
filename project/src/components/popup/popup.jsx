@@ -40,7 +40,6 @@ export default function Popup({onKeyDown}) {
 
   const onRequiredFieldFocus = (evt) => {
     if (!evt.target.value) {
-      const errorKeys = Object.keys(errors);
       setErrors(Object.assign(
         {},
         errors,
