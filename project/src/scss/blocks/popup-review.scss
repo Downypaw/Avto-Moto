@@ -45,6 +45,7 @@
 }
 
 .popup-review__close {
+  cursor: pointer;
   position: absolute;
   background-color: transparent;
   border: none;
@@ -170,6 +171,7 @@
 
 .popup-review__rating-label {
   height: 20px;
+  cursor: pointer;
 }
 
 .popup-review__button {

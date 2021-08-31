@@ -19,19 +19,35 @@ const images = [
 
 export default function Slider() {
   const [offset, setOffset] = useState(0);
+  const [initialCordinate, setInitialCordinate] = useState(0);
+  const [resultCordinate, setResultCordinate] = useState(0);
 
   const onControlClick = (controlType) => {
     controlType === ControlType.PREV ? setOffset(offset + IMAGE_WIDTH) : setOffset(offset - IMAGE_WIDTH);
   };
 
+  const makeSwipe = (evt) => {
+    setResultCordinate(evt.changedTouches[0].clientX);
+    if (initialCordinate < resultCordinate &&offset < 0) {
+      setOffset(offset + IMAGE_WIDTH)
+    }
+    if (initialCordinate > resultCordinate && offset > -(images.length - 1) * IMAGE_WIDTH) {
+      setOffset(offset - IMAGE_WIDTH)
+    }
+  }
+
   return (
-    <div className="slider">
+    <div
+      className="slider"
+      onTouchStart={(evt) => setInitialCordinate(evt.touches[0].clientX)}
+      onTouchEnd={makeSwipe}
+    >
       <div className="slider__container">
         <span className="slider__new-model">New model</span>
         <ul className="slider__items" style={{left: `${offset}px`}}>
           {images.map((image, index) => (
             <li className="slider__item" key={`${image.previewImage}-${index}`}>
-              <img className="slider__image" src={`img/${image.fullImage}`} alt="Изображение машины"/>
+              <img className="slider__image" src={`img/${image.fullImage}`} alt="Изображение машины" width="600" height="375"/>
             </li>
           ))}
         </ul>
@@ -42,6 +58,7 @@ export default function Slider() {
           className="slider__control"
           onClick={() => onControlClick(ControlType.PREV)}
           disabled={offset === 0}
+          name="previous"
         >
           <svg className="slider__arrow slider__arrow--prev" width="20" height="13">
             <use xlinkHref="#icon-arrow"></use>
@@ -52,6 +69,7 @@ export default function Slider() {
           className="slider__control"
           onClick={() => onControlClick(ControlType.NEXT)}
           disabled={offset === -(images.length - 1) * IMAGE_WIDTH}
+          name="next"
         >
           <svg className="slider__arrow slider__arrow--next" width="20" height="13">
             <use xlinkHref="#icon-arrow"></use>
@@ -60,7 +78,7 @@ export default function Slider() {
         <ul className="slider__previews">
           {images.map((image, index) => (
             <li className={`slider__preview ${offset === - index * IMAGE_WIDTH ? 'slider__preview-current' : ''}`} key={`${image.previewImage}-${index}`}>
-              <img className="slider__preview-image" src={`img/${image.previewImage}`} alt="Картинка-превью машины"/>
+              <img className="slider__preview-image" src={`img/${image.previewImage}`} alt="Картинка-превью машины" width="128" height="80"/>
             </li>
           ))}
         </ul>

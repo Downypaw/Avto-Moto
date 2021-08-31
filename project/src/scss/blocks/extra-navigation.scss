@@ -1,12 +1,13 @@
 .extra-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 65px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 66px;
   @include list;
+  margin-left: 9px;
+  margin-right: 5px;
 }
 
 .extra-navigation__link {
   @include navigation-link;
-  padding: 31px 1px;
+  padding: 31px 0;
 }

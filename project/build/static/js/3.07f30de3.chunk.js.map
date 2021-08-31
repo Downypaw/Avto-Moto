@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/blank-page/blank-page.jsx"],"names":["BlankPage"],"mappings":"mGAAA,+DAEe,SAASA,IAEtB,OACE","file":"static/js/3.07f30de3.chunk.js","sourcesContent":["import React from 'react';\r\n\r\nexport default function BlankPage() {\r\n\r\n  return (\r\n    <h1>Здесь пока ничего нет...</h1>\r\n  );\r\n}\r\n"],"sourceRoot":""}

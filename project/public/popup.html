@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Магазин автомобилей"/>
+    <link rel="preload" href="fonts/open-sans.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/open-sans-semibold.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/open-sans-bold.woff2" as="font" crossorigin>
+    <title>Avto-Moto</title>
+  </head>
+  <body class="page__body">
+    <div style="display: none">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-arrow" viewbox="0 0 13 12">
+          <path xmlns="http://www.w3.org/2000/svg" d="M1.00427 6.17188L6.91841 0.368597M1.00427 6.17188L6.69294 11.9692M1.00427 6.17188L19.9813 6.35128"/>
+        </symbol>
+        <symbol id="icon-star" viewbox="0 0 17 16">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.63145 0L10.5103 5.87336L16.5906 5.87336L11.6716 9.50329L13.5505 15.3766L8.63145 11.7467L3.71242 15.3766L5.59132 9.50329L0.672291 5.87336L6.75254 5.87336L8.63145 0Z"/>
+        </symbol>
+      </svg>
+    </div>
+    <div id="root" style="height: 100%">
+      <noscript>
+        <section className="popup-review" onClick={onOverlayClick}>
+          <div className="popup-review__modal">
+            <div className="popup-review__wrapper">
+              <button
+                className="popup-review__close"
+                type="button"
+                aria-label="Закрыть"
+              >
+              </button>
+              <h3 className="popup-review__title">Оставить отзыв</h3>
+              <form className="popup-review__form" method="post" action="https://echo.htmlacademy.ru/" name="review-form">
+                <div className="popup-review__form-fields">
+                  <div className="popup-review__required">
+                    <label className="popup-review__label visually-hidden" for="name">Имя</label>
+                    <input
+                      className="popup-review__input popup-review__input--required"
+                      type="text"
+                      name="name-field"
+                      id="name"
+                      placeholder="Имя"
+                      required
+                      autofocus
+                    >
+                  </div>
+                  <label className="popup-review__label visually-hidden" for="advantages">Имя</label>
+                  <input
+                    className="popup-review__input"
+                    type="text"
+                    name="advantages-field"
+                    id="advantages"
+                    placeholder="Достоинства"
+                  >
+                  <label className="popup-review__label visually-hidden" for="disadvantages">Имя</label>
+                  <input
+                    className="popup-review__input"
+                    type="text"
+                    name="disadvantages-field"
+                    id="disadvantages"
+                    placeholder="Недостатки"
+
+                  <div className="popup-review__rating">
+                    <span className="popup-review__rating-title">Оцените товар:</span>
+                    <input
+                      className="popup-review__radio-button visually-hidden"
+                      name="rating"
+                      value="5"
+                      id="5-stars"
+                      type="radio"
+                      value="5"
+                    >
+                    <label for="5-stars" className="popup-review__rating-label" title="perfect">
+                      <svg className="popup-review__star-image" width="27.14" height="27.56">
+                        <use xlink:href="#icon-star"></use>
+                      </svg>
+                    </label>
+
+                    <input
+                      className="popup-review__radio-button visually-hidden"
+                      name="rating"
+                      value="4"
+                      id="4-stars"
+                      type="radio"
+                      value="4"
+                    >
+                    <label for="4-stars" className="popup-review__rating-label" title="perfect">
+                      <svg className="popup-review__star-image" width="27.14" height="27.56">
+                        <use xlink:href="#icon-star"></use>
+                      </svg>
+                    </label>
+
+                    <input
+                      className="popup-review__radio-button visually-hidden"
+                      name="rating"
+                      value="3"
+                      id="3-stars"
+                      type="radio"
+                      value="3"
+                    >
+                    <label for="3-stars" className="popup-review__rating-label" title="perfect">
+                      <svg className="popup-review__star-image" width="27.14" height="27.56">
+                        <use xlink:href="#icon-star"></use>
+                      </svg>
+                    </label>
+
+                    <input
+                      className="popup-review__radio-button visually-hidden"
+                      name="rating"
+                      value="2"
+                      id="2-stars"
+                      type="radio"
+                      value="2"
+                    >
+                    <label for="2-stars" className="popup-review__rating-label" title="perfect">
+                      <svg className="popup-review__star-image" width="27.14" height="27.56">
+                        <use xlink:href="#icon-star"></use>
+                      </svg>
+                    </label>
+
+                    <input
+                      className="popup-review__radio-button visually-hidden"
+                      name="rating"
+                      value="1"
+                      id="1-stars"
+                      type="radio"
+                      value="1"
+                    >
+                    <label for="1-stars" className="popup-review__rating-label" title="perfect">
+                      <svg className="popup-review__star-image" width="27.14" height="27.56">
+                        <use xlink:href="#icon-star"></use>
+                      </svg>
+                    </label>
+                  </div>
+                  <div className="popup-review__required popup-review__required--comment">
+                    <label className="popup-review__comment visually-hidden" for="comment">Текст отзыва</label>
+                    <textarea
+                      className="popup-review__comment-field"
+                      placeholder="Комментарий"
+                      id="comment"
+                      required
+                    >
+                    </textarea>
+                  </div>
+                </div>
+                <button
+                  className="popup-review__button"
+                  type="submit"
+                >
+                  Оставить отзыв
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </noscript>
+    </div>
+    <script src="./sw.js"></script>
+  </body>
+</html>

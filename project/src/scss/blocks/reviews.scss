@@ -11,6 +11,7 @@
 
 .reviews__button {
   @include light-button;
+  text-decoration: none;
   position: absolute;
   top: 20px;
   right: 14px;

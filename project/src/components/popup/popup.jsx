@@ -97,7 +97,7 @@ export default function Popup({onKeyDown}) {
           >
           </button>
           <h3 className="popup-review__title">Оставить отзыв</h3>
-          <form className="popup-review__form" method="get" name="review-form" onSubmit={onFormSubmit}>
+          <form className="popup-review__form" method="post" action="https://echo.htmlacademy.ru/" name="review-form" onSubmit={onFormSubmit}>
             <div className="popup-review__form-fields">
               <div className="popup-review__required">
                 <label className="popup-review__label visually-hidden" htmlFor="name">Имя</label>

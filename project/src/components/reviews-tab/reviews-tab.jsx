@@ -14,7 +14,8 @@ export default function ReviewsTab({onEscKeyDown}) {
     <div className="reviews">
       <Link
         className="reviews__button"
-        onClick={() => {
+        onClick={(evt) => {
+          evt.preventDefault();
           dispatch(setPopupStatus(true));
           document.addEventListener('keydown', onEscKeyDown);
         }}

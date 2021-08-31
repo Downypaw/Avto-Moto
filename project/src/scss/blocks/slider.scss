@@ -30,7 +30,8 @@
   @include list;
   display: flex;
   flex-wrap: wrap;
-  width: 470px;
+  width: 465px;
+  margin-right: 0;
 }
 
 .slider__control {
@@ -99,7 +100,6 @@
   display: flex;
   order: 1;
   margin-left: 30px;
-  margin-right: 6px;
 }
 
 .slider__preview:not(last-of-type) {

@@ -12,12 +12,22 @@ export default function MainPage() {
   const isPopupActive = useSelector(getPopupStatus);
   const dispatch = useDispatch();
 
+  const bodyElement = document.querySelector('body');
+
   const onEscKeyDown = (evt, func) => {
     if (evt.key === 'Escape' || evt.key === 'Esc') {
       evt.preventDefault();
       dispatch(setPopupStatus(false));
     }
   };
+
+  if (isPopupActive) {
+    bodyElement.classList.add('page__body--unactive');
+  }
+
+  if (!isPopupActive && bodyElement.classList.contains('page__body--unactive')) {
+    bodyElement.classList.remove('page__body--unactive')
+  }
 
   return (
     <>
@@ -26,8 +36,8 @@ export default function MainPage() {
         <h1 className="visually-hidden">Сайт компании "Авто-мото"</h1>
         <GoodPresentation />
         <TabsSection onKeyDown={onEscKeyDown}/>
+        <Footer />
       </div>
-      <Footer />
       {isPopupActive && <Popup onKeyDown={onEscKeyDown}/>}
     </>
   );
