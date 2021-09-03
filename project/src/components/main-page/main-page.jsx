@@ -31,13 +31,13 @@ export default function MainPage() {
 
   return (
     <>
-      <Header />
+      <Header/>
       <div className="page-main">
         <h1 className="visually-hidden">Сайт компании "Авто-мото"</h1>
         <GoodPresentation />
         <TabsSection onKeyDown={onEscKeyDown}/>
-        <Footer />
       </div>
+      <Footer />
       {isPopupActive && <Popup onKeyDown={onEscKeyDown}/>}
     </>
   );

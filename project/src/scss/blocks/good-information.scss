@@ -15,7 +15,9 @@
 }
 
 .good-information__price {
-  margin-bottom: 43px;
+  margin-bottom: 33px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .good-information__new-price {
@@ -24,8 +26,8 @@
   margin: 0;
   margin-right: 35px;
   margin-left: 3px;
-  display: inline-block;
   font-family: "Open Sans", "Arial", sans-serif;
+  margin-bottom: 18px;
 }
 
 .good-information__old-price {
@@ -33,7 +35,6 @@
   opacity: 0.5;
   font-size: 20px;
   vertical-align: top;
-  display: inline-block;
   font-family: "Open Sans", "Arial", sans-serif;
   position: relative;
 

@@ -1,7 +1,11 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {Link} from "react-router-dom";
+import {getPopupStatus} from '../../store/selectors';
 
 export default function Header() {
+  const isPopupActive = useSelector(getPopupStatus);
+
   return (
     <header className="page-header">
       <div className="page-header__container container">
@@ -11,22 +15,22 @@ export default function Header() {
         <nav className="navigation">
           <ul className="navigation__list">
             <li className="navigation__item">
-              <Link className="navigation__link" to="/blank">
+              <Link className="navigation__link" to="/blank" tabIndex={isPopupActive ? -1 : 0}>
                 Автомобили
               </Link>
             </li>
             <li className="navigation__item">
-              <Link className="navigation__link" to="/blank">
+              <Link className="navigation__link" to="/blank" tabIndex={isPopupActive ? -1 : 0}>
                 Контакты
               </Link>
             </li>
             <li className="navigation__item">
-              <Link className="navigation__link" to="/blank">
+              <Link className="navigation__link" to="/blank" tabIndex={isPopupActive ? -1 : 0}>
                 Услуги
               </Link>
             </li>
             <li className="navigation__item">
-              <Link className="navigation__link" to="/blank">
+              <Link className="navigation__link" to="/blank" tabIndex={isPopupActive ? -1 : 0}>
                 Вакансии
               </Link>
             </li>

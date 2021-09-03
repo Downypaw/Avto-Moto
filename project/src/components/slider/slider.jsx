@@ -1,5 +1,7 @@
 import React from 'react';
 import {useState} from 'react';
+import {useSelector} from 'react-redux';
+import {getPopupStatus} from '../../store/selectors';
 import {IMAGE_WIDTH, ControlType} from '../../const.js';
 
 const images = [
@@ -21,6 +23,8 @@ export default function Slider() {
   const [offset, setOffset] = useState(0);
   const [initialCordinate, setInitialCordinate] = useState(0);
   const [resultCordinate, setResultCordinate] = useState(0);
+
+  const isPopupActive = useSelector(getPopupStatus);
 
   const onControlClick = (controlType) => {
     controlType === ControlType.PREV ? setOffset(offset + IMAGE_WIDTH) : setOffset(offset - IMAGE_WIDTH);
@@ -58,7 +62,9 @@ export default function Slider() {
           className="slider__control"
           onClick={() => onControlClick(ControlType.PREV)}
           disabled={offset === 0}
+          aria-label="previous"
           name="previous"
+          tabIndex={isPopupActive ? -1 : 0}
         >
           <svg className="slider__arrow slider__arrow--prev" width="20" height="13">
             <use xlinkHref="#icon-arrow"></use>
@@ -69,7 +75,9 @@ export default function Slider() {
           className="slider__control"
           onClick={() => onControlClick(ControlType.NEXT)}
           disabled={offset === -(images.length - 1) * IMAGE_WIDTH}
+          aria-label="next"
           name="next"
+          tabIndex={isPopupActive ? -1 : 0}
         >
           <svg className="slider__arrow slider__arrow--next" width="20" height="13">
             <use xlinkHref="#icon-arrow"></use>

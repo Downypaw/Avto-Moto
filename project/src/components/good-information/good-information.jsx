@@ -1,6 +1,10 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+import {getPopupStatus} from '../../store/selectors';
 
 export default function GoodInformation() {
+  const isPopupActive = useSelector(getPopupStatus);
+
   return (
     <div className="good-information">
       <h2 className="good-information__name">Марпех 11</h2>
@@ -18,8 +22,8 @@ export default function GoodInformation() {
         <pre className="good-information__new-price">2 300 000 ₽</pre>
         <pre className="good-information__old-price">2  400 000 ₽</pre>
       </div>
-      <button className="good-information__request">Оставить заявку</button>
-      <button className="good-information__credit">В кредит от <span>11 000 ₽</span></button>
+      <button className="good-information__request" name="request" tabIndex={isPopupActive ? -1 : 0}>Оставить заявку</button>
+      <button className="good-information__credit" name="credit" tabIndex={isPopupActive ? -1 : 0}>В кредит от <span>11 000 ₽</span></button>
     </div>
   );
 }

@@ -25,12 +25,6 @@
         <section className="popup-review" onClick={onOverlayClick}>
           <div className="popup-review__modal">
             <div className="popup-review__wrapper">
-              <button
-                className="popup-review__close"
-                type="button"
-                aria-label="Закрыть"
-              >
-              </button>
               <h3 className="popup-review__title">Оставить отзыв</h3>
               <form className="popup-review__form" method="post" action="https://echo.htmlacademy.ru/" name="review-form">
                 <div className="popup-review__form-fields">
@@ -148,6 +142,7 @@
                 <button
                   className="popup-review__button"
                   type="submit"
+                  name="submit"
                 >
                   Оставить отзыв
                 </button>

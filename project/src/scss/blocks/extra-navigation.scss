@@ -1,7 +1,7 @@
 .extra-navigation {
-  display: grid;
-  grid-auto-flow: column;
-  grid-gap: 66px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   @include list;
   margin-left: 9px;
   margin-right: 5px;
@@ -10,4 +10,31 @@
 .extra-navigation__link {
   @include navigation-link;
   padding: 31px 0;
+  margin: 0 20px;
+}
+
+.extra-navigation__item:first-of-type,
+.extra-navigation__item:nth-of-type(2),
+.extra-navigation__item:nth-of-type(3),
+.extra-navigation__item:nth-of-type(4),
+.extra-navigation__item:nth-of-type(5), {
+  .extra-navigation__link {
+    margin-left: 0;
+    margin-right: 67px;
+  }
+}
+
+.extra-navigation__item:nth-of-type(6) {
+  .extra-navigation__link {
+    margin-left: 0;
+    margin-right: 62px;
+  }
+}
+
+
+.extra-navigation__item:nth-of-type(7) {
+  .extra-navigation__link {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

@@ -1,6 +1,10 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+import {getPopupStatus} from '../../store/selectors';
 
 export default function ContactTab() {
+  const isPopupActive = useSelector(getPopupStatus);
+
   return (
     <div className="contacts">
       <dl className="contacts__information">
@@ -10,11 +14,11 @@ export default function ContactTab() {
         <dd className="contacts__value">Ежедневно, с 10:00 до 21:00</dd>
         <dt className="contacts__title">Телефон</dt>
         <dd className="contacts__value">
-          <a className="contacts__link" href="tel:+780033335599">8 (800) 333-55-99</a>
+          <a className="contacts__link" href="tel:+780033335599" tabIndex={isPopupActive ? -1 : 0}>8 (800) 333-55-99</a>
         </dd>
         <dt className="contacts__title">E-mail</dt>
         <dd className="contacts__value">
-          <a className="contacts__link" href="mailto:info@avto-moto.ru">info@avto-moto.ru</a>
+          <a className="contacts__link" href="mailto:info@avto-moto.ru" tabIndex={isPopupActive ? -1 : 0}>info@avto-moto.ru</a>
         </dd>
       </dl>
       <section className="map">

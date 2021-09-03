@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.contacts__information {
+  width: 274px;
+}
+
 .contacts__title {
   font-weight: bold;
   font-size: 16px;
@@ -42,9 +46,4 @@
     color: $contacts-color;
     opacity: 0.5;
   }
-}
-
-.map {
-  margin-left: 100px;
-  margin-top: 20px;
 }

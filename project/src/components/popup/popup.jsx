@@ -15,6 +15,13 @@ export default function Popup({onKeyDown}) {
     name: false,
     comment: false,
   });
+  const [checkedStarsCount, setCheckedStarsCount] = useState(0);
+  const [hoveredStarsCount, setHoveredStarsCount] = useState(0);
+  const [focusedStarsCount, setFocusedStarsCount] = useState(0);
+
+  console.log(checkedStarsCount);
+  console.log(hoveredStarsCount);
+  console.log(focusedStarsCount);
 
   const onFormSubmit = (evt) => {
     evt.preventDefault();
@@ -87,6 +94,7 @@ export default function Popup({onKeyDown}) {
           <button
             className="popup-review__close"
             type="button"
+            name="close"
             aria-label="Закрыть"
             onClick={
               () => {
@@ -124,7 +132,7 @@ export default function Popup({onKeyDown}) {
                       ));
                     }
                   }}
-                  onFocus={(evt) => onRequiredFieldFocus(evt)}
+                  onBlur={(evt) => onRequiredFieldFocus(evt)}
                   value={name}
                   required
                   autoFocus
@@ -155,53 +163,32 @@ export default function Popup({onKeyDown}) {
               </input>
               <div className="popup-review__rating">
                 <span className="popup-review__rating-title">Оцените товар:</span>
-                <input
-                  className="popup-review__radio-button visually-hidden"
-                  name="rating"
-                  value="5"
-                  id="5-stars"
-                  type="radio"
-                  onChange={(evt) => {
-                    setRating(Number(evt.target.value));
-                  }}
-                  checked={rating === 5}
-                />
-                <label htmlFor="5-stars" className="popup-review__rating-label" title="perfect">
-                  <svg className="popup-review__star-image" width="27.14" height="27.56">
-                    <use xlinkHref="#icon-star"></use>
-                  </svg>
-                </label>
 
                 <input
                   className="popup-review__radio-button visually-hidden"
                   name="rating"
-                  value="4"
-                  id="4-stars"
+                  value="1"
+                  id="1-stars"
                   type="radio"
                   onChange={(evt) => {
                     setRating(Number(evt.target.value));
+                    setCheckedStarsCount(1);
                   }}
-                  checked={rating === 4}
+                  onFocus={() => setFocusedStarsCount(1)}
+                  checked={rating === 1}
                 />
-                <label htmlFor="4-stars" className="popup-review__rating-label" title="perfect">
-                  <svg className="popup-review__star-image" width="27.14" height="27.56">
-                    <use xlinkHref="#icon-star"></use>
-                  </svg>
-                </label>
-
-                <input
-                  className="popup-review__radio-button visually-hidden"
-                  name="rating"
-                  value="3"
-                  id="3-stars"
-                  type="radio"
-                  onChange={(evt) => {
-                    setRating(Number(evt.target.value));
-                  }}
-                  checked={rating === 3}
-                />
-                <label htmlFor="3-stars" className="popup-review__rating-label" title="perfect">
-                  <svg className="popup-review__star-image" width="27.14" height="27.56">
+                <label
+                  htmlFor="1-stars"
+                  className="popup-review__rating-label"
+                  title="perfect"
+                  onMouseOver={() => setHoveredStarsCount(1)}
+                  onMouseOut={() => setHoveredStarsCount(0)}
+                >
+                  <svg
+                    className={`popup-review__star-image ${hoveredStarsCount >= 1 || focusedStarsCount >= 1 || checkedStarsCount >= 1 ? 'popup-review__star-image--active' : ''}`}
+                    width="27.14"
+                    height="27.56"
+                  >
                     <use xlinkHref="#icon-star"></use>
                   </svg>
                 </label>
@@ -214,11 +201,23 @@ export default function Popup({onKeyDown}) {
                   type="radio"
                   onChange={(evt) => {
                     setRating(Number(evt.target.value));
+                    setCheckedStarsCount(2);
                   }}
+                  onFocus={() => setFocusedStarsCount(2)}
                   checked={rating === 2}
                 />
-                <label htmlFor="2-stars" className="popup-review__rating-label" title="perfect">
-                  <svg className="popup-review__star-image" width="27.14" height="27.56">
+                <label
+                  htmlFor="2-stars"
+                  className="popup-review__rating-label"
+                  title="perfect"
+                  onMouseOver={() => setHoveredStarsCount(2)}
+                  onMouseOut={() => setHoveredStarsCount(0)}
+                >
+                  <svg
+                    className={`popup-review__star-image ${hoveredStarsCount >= 2 || focusedStarsCount >= 2 || checkedStarsCount >= 2 ? 'popup-review__star-image--active' : ''}`}
+                    width="27.14"
+                    height="27.56"
+                  >
                     <use xlinkHref="#icon-star"></use>
                   </svg>
                 </label>
@@ -226,16 +225,87 @@ export default function Popup({onKeyDown}) {
                 <input
                   className="popup-review__radio-button visually-hidden"
                   name="rating"
-                  value="1"
-                  id="1-stars"
+                  value="3"
+                  id="3-stars"
                   type="radio"
                   onChange={(evt) => {
                     setRating(Number(evt.target.value));
+                    setCheckedStarsCount(3);
                   }}
-                  checked={rating === 1}
+                  onFocus={() => setFocusedStarsCount(3)}
+                  checked={rating === 3}
                 />
-                <label htmlFor="1-stars" className="popup-review__rating-label" title="perfect">
-                  <svg className="popup-review__star-image" width="27.14" height="27.56">
+                <label
+                  htmlFor="3-stars"
+                  className="popup-review__rating-label"
+                  title="perfect"
+                  onMouseOver={() => setHoveredStarsCount(3)}
+                  onMouseOut={() => setHoveredStarsCount(0)}
+                >
+                  <svg
+                    className={`popup-review__star-image ${hoveredStarsCount >= 3 || focusedStarsCount >= 3 || checkedStarsCount >= 3 ? 'popup-review__star-image--active' : ''}`}
+                    width="27.14"
+                    height="27.56"
+                  >
+                    <use xlinkHref="#icon-star"></use>
+                  </svg>
+                </label>
+
+                <input
+                  className="popup-review__radio-button visually-hidden"
+                  name="rating"
+                  value="4"
+                  id="4-stars"
+                  type="radio"
+                  onChange={(evt) => {
+                    setRating(Number(evt.target.value));
+                    setCheckedStarsCount(4);
+                  }}
+                  onFocus={() => setFocusedStarsCount(4)}
+                  checked={rating === 4}
+                />
+                <label
+                  htmlFor="4-stars"
+                  className="popup-review__rating-label"
+                  title="perfect"
+                  onMouseOver={() => setHoveredStarsCount(4)}
+                  onMouseOut={() => setHoveredStarsCount(0)}
+                >
+                  <svg
+                    className={`popup-review__star-image ${hoveredStarsCount >= 4 || focusedStarsCount >= 4 || checkedStarsCount >= 4 ? 'popup-review__star-image--active' : ''}`}
+                    width="27.14"
+                    height="27.56"
+                  >
+                    <use xlinkHref="#icon-star"></use>
+                  </svg>
+                </label>
+
+                <input
+                  className="popup-review__radio-button visually-hidden"
+                  name="rating"
+                  value="5"
+                  id="5-stars"
+                  type="radio"
+                  onChange={(evt) => {
+                    setRating(Number(evt.target.value));
+                    setCheckedStarsCount(5);
+                  }}
+                  onFocus={() => setFocusedStarsCount(5)}
+                  onBlur={() => setFocusedStarsCount(5)}
+                  checked={rating === 5}
+                />
+                <label
+                  htmlFor="5-stars"
+                  className="popup-review__rating-label"
+                  title="perfect"
+                  onMouseOver={() => setHoveredStarsCount(5)}
+                  onMouseOut={() => setHoveredStarsCount(0)}
+                >
+                  <svg
+                    className={`popup-review__star-image ${hoveredStarsCount === 5 || focusedStarsCount === 5 || checkedStarsCount === 5 ? 'popup-review__star-image--active' : ''}`}
+                    width="27.14"
+                    height="27.56"
+                  >
                     <use xlinkHref="#icon-star"></use>
                   </svg>
                 </label>
@@ -263,7 +333,7 @@ export default function Popup({onKeyDown}) {
                       ));
                     }
                   }}
-                  onFocus={(evt) => onRequiredFieldFocus(evt)}
+                  onBlur={(evt) => onRequiredFieldFocus(evt)}
                   value={comment}
                   required
                 >
@@ -273,6 +343,7 @@ export default function Popup({onKeyDown}) {
             <button
               className="popup-review__button"
               type="submit"
+              name="submit"
               onClick={() => checkFields()}
             >
               Оставить отзыв
